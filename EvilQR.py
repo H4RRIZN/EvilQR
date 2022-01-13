@@ -3,9 +3,15 @@ import qrcode
 from alive_progress import alive_bar
 from time import sleep
 from os import system
+import signal
 
+# MAIN
+if __name__ == '__main__':
 
-URL = input("Ingresa una URL: ")
+    print("insert banner here")
+
+    URL = input("Ingresa una URL: ")
+
 
 # QR 
 qr = qrcode.QRCode(
@@ -26,8 +32,8 @@ with alive_bar(100, spinner='pulse') as progrs:
     for i in range(100):
         sleep(0.01)
         progrs()
-print("\nQR Generado con exito [!]")
-print("Archivo almacenado en la carpeta del repositorio: EvilQR/eQRCode.png ")
+print("\n[>] QR Generado con exito [<]")
+print("Archivo almacenado en el repositorio: EvilQR/eQRCode.png ")
 sleep(3)
 system('clear')
 img.save('eQRCode.png')
