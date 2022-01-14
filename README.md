@@ -1,6 +1,6 @@
 # EvilQR
 <p align="center">
-   <img src="https://github.com/Harrizzon/EvilQR/blob/main/misc/EvilQR.png" width="350" title="RSCS">
+   <img src="https://github.com/Harrizzon/EvilQR/blob/main/misc/EvilQR-Logo.jpg" width="350" title="RSCS">
 <p align="center">
 <p align="center">
    <a href="https://github.com/Harrizzon/EvilQR"><img src="http://ForTheBadge.com/images/badges/built-with-love.svg"> <img src="https://forthebadge.com/images/badges/made-with-python.svg"></a>
