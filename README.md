@@ -12,8 +12,25 @@
 - Generar Codigo QR en base a cualquier tipo de URL
 - Enmascarar URL
 
-   
-   
+# Instalacion
+
+One Liner 
+```bash
+sudo git clone https://github.com/Harrizzon/EvilQR && cd EvilQR && chmod +x EvilQR.py && pip3 install -r requirements.txt && cp EvilQR.py /usr/bin/
+```
+By Steps
+```bash
+# Install as sudo
+sudo su
+git clone https://github.com/Harrizzon/EvilQR
+cd EvilQR
+chmod +x EvilQR.py
+pip3 install -r requirements.txt
+
+# Optional but recommendable
+cp EvilQR.py /usr/bin/
+```
+
    
    
    
