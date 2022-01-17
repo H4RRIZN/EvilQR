@@ -39,7 +39,8 @@ Para ejecutar la herramienta podemos hacerlo de las siguientes formas:
 # With the script copied to /usr/bin we can run it from any directory in the terminal
 EvilQR.py
 ```
-![imagen](https://user-images.githubusercontent.com/72285693/149814073-7b000c02-34a6-4b67-9613-9c36559966e5.png)   
+![imagen](https://user-images.githubusercontent.com/72285693/149815234-038273b7-a362-4002-87c4-084de3023ded.png)
+   
 or
 ```bash
 # Running it directly from the tool's repository
