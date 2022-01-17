@@ -25,7 +25,7 @@ banner =  style.RED + """
      7MMlllYMM            db   7MM    g8ll8q   7MMlllMq  
       MM     7                  MM  dP      YM  MM    MM 
       MM   d  7M     MF  7MM    MM dM        MM MM    M9  
-      MMmmMM   VA    V    MM    MM MM        MM MMmmdM9  """ +style.RESET  + style.CYAN + """(by: Harrizzon) """ + style.RESET +  style.RED + """
+      MMmmMM   VA    V    MM    MM MM        MM MMmmdM9  """ +style.RESET  + style.CYAN + """(by: """ + style.UNDERLINE +  """Harrizzon""" + style.RESET + style.CYAN + """)""" +  style.RED + """
       MM   Y    VA  V     MM    MM MM        MP MM  YM  
       MM      M  VVV      MM    MM  Mb      dP  MM    Mb 
      JMMmmmmMMM   W      JMML  JMML  llbmmdl   JMML   JMM
@@ -53,7 +53,7 @@ if __name__ == '__main__':
     print(banner)
 
     if len(sys.argv) == 1:
-        main_url = input("Enter an URL (with " + style.CYAN + "http " + style.RESET +  "or " + style.CYAN + "https" + style.WHITE + "):\n" + style.CYAN)
+        main_url = input(style.WHITE + "Enter an URL (With " + style.CYAN + "http " + style.WHITE +  "or " + style.CYAN + "https" + style.WHITE + "):\n" + style.CYAN)
         while True:
             if len(main_url) == 0:
                 system('clear')
@@ -71,7 +71,7 @@ if __name__ == '__main__':
                 qr.add_data(main_url)
                 qr.make(fit=True)
                 img = qr.make_image(fill='black', back_color='white')
-                print(style.YELLOW + "\nGenerando Codigo QR\n" + style.RESET)
+                print(style.YELLOW + "\nGenerating QR Code\n" + style.RESET)
             
             # QR GENERATING
                 with alive_bar(100, spinner='pulse') as progrs:
@@ -88,12 +88,34 @@ if __name__ == '__main__':
                 sys.exit(0)
             if choose_mask == "y":
                 system('clear')
-                print(style.RED + "\n[!] " +style.UNDERLINE + style.YELLOW + "Masking the next URL" + style.RESET + style.RED + " >> " + style.WHITE + main_url + "\n")
-                mask_dom = input("\nEnter the domain name to mask the URL (With http or https ex: https://facebook.com <> http://google.com): \n")
-                keywords = input("\nEnter the keywords without whitespace (Use '-' ex: free-money): \n")
+                print(style.RED + "\n[!] " +style.UNDERLINE + style.YELLOW + "Masking the next URL" + style.RESET + style.RED + " >> " + style.CYAN + main_url + "\n")
+                mask_dom = input(style.WHITE + "\nEnter the domain name to mask the URL (With " + style.CYAN + style.UNDERLINE +  "http" + style.RESET + style.WHITE + " or " + style.CYAN + style.UNDERLINE + "https" + style.RESET + style.WHITE +  " ex: " + style.CYAN + style.UNDERLINE + "https://" + style.RESET + style.WHITE + "facebook.com <> " + style.CYAN + style.UNDERLINE + "http://" + style.RESET + style.WHITE + "google.com): \n" + style.CYAN)
+                keywords = input(style.WHITE + "\nEnter the keywords without whitespace (Use " + style.CYAN + "'-' " + style.WHITE + "ex: free" + style.CYAN + "-"+ style.WHITE + "money): \n")
                 f_url = maskurl(main_url, mask_dom, keywords)
-                print("\n" + f_url)
+                print("\n" + style.WHITE + "This is your masked URL >> " + style.MAGENTA + f_url)
+                qr = qrcode.QRCode(
+                version=4,
+                box_size=10,
+                border=1
+                )
+                qr.add_data(f_url)
+                qr.make(fit=True)
+                img = qr.make_image(fill='black', back_color='white')
+                print(style.YELLOW + "\nGenerating QR Code\n" + style.RESET)
+            # QR GENERATING
+                with alive_bar(100, spinner='pulse') as progrs:
 
+                    for i in range(100):
+                        sleep(0.01)
+                        progrs()
+                system('clear')        
+                print(style.GREEN + "\n\n[>] QR Successfully Generated [<]" + style.RESET)
+                print(style.GREEN + "Archivo almacenado en el repositorio: " + style.RESET + style.CYAN + "EvilQR/eQRCode.png " + style.RESET)
+                sleep(4)
+                system('clear')
+                img.save('eQRCode.png')
+                sys.exit(0)
+                
 
 
             else:
