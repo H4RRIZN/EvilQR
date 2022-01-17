@@ -46,7 +46,7 @@ def maskurl(main_url: str, mask_dom: str, keywords: str) -> str:
     return f"{mask_dom}-{keywords}@{urlparse(furl).netloc + urlparse(furl).path}"
 
 def shortner(b_url: str) -> str:
-    return post(f"https://da.gd/s/?url={b_url}").text
+    return post(f"https://is.gd/create.php?format=json&url={b_url}").json()['shorturl']
 
 pwd = os.getcwd()
 
