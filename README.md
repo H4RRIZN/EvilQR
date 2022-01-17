@@ -33,7 +33,7 @@ pip3 install -r requirements.txt
 cp EvilQR.py /usr/bin/
 ```
 
-# USO
+# Uso
 Para ejecutar la herramienta podemos hacerlo de las siguientes formas:
 ```bash
 # With the script copied to /usr/bin we can run it from any directory in the terminal
@@ -48,8 +48,10 @@ python3 EvilQR.py
 ```
 ![imagen](https://user-images.githubusercontent.com/72285693/149814976-c27228b9-f130-43be-9de1-64de0a8d848c.png)
 
-   
-   
+# DEMO
+
+![demo](https://user-images.githubusercontent.com/72285693/149820249-0e9a07d8-b69b-4587-bab0-10c3a621ca5d.gif)
+
    
    
    
