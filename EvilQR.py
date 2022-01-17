@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-import qrcode, signal, sys, argparse
+import qrcode, signal, sys, argparse,os
 from alive_progress import alive_bar
 from time import sleep
 from os import system
@@ -48,6 +48,8 @@ def maskurl(main_url: str, mask_dom: str, keywords: str) -> str:
 def shortner(b_url: str) -> str:
     return post(f"https://da.gd/s/?url={b_url}").text
 
+pwd = os.getcwd()
+
 # MAIN
 if __name__ == '__main__':
     print(banner)
@@ -81,7 +83,7 @@ if __name__ == '__main__':
                         progrs()
                 system('clear')        
                 print(style.GREEN + "\n\n[>] QR Generado con exito [<]" + style.RESET)
-                print(style.GREEN + "Archivo almacenado en el repositorio: " + style.RESET + style.CYAN + "EvilQR/eQRCode.png " + style.RESET)
+                print(style.GREEN + "QR stored in the directory: " + style.RESET + style.CYAN + pwd + style.RESET)
                 sleep(4)
                 system('clear')
                 img.save('eQRCode.png')
@@ -90,7 +92,7 @@ if __name__ == '__main__':
                 system('clear')
                 print(style.RED + "\n[!] " +style.UNDERLINE + style.YELLOW + "Masking the next URL" + style.RESET + style.RED + " >> " + style.CYAN + main_url + "\n")
                 mask_dom = input(style.WHITE + "\nEnter the domain name to mask the URL (With " + style.CYAN + style.UNDERLINE +  "http" + style.RESET + style.WHITE + " or " + style.CYAN + style.UNDERLINE + "https" + style.RESET + style.WHITE +  " ex: " + style.CYAN + style.UNDERLINE + "https://" + style.RESET + style.WHITE + "facebook.com <> " + style.CYAN + style.UNDERLINE + "http://" + style.RESET + style.WHITE + "google.com): \n" + style.CYAN)
-                keywords = input(style.WHITE + "\nEnter the keywords without whitespace (Use " + style.CYAN + "'-' " + style.WHITE + "ex: free" + style.CYAN + "-"+ style.WHITE + "money): \n")
+                keywords = input(style.WHITE + "\nEnter the keywords without whitespace (Use " + style.CYAN + "'-' " + style.WHITE + "ex: free" + style.CYAN + "-"+ style.WHITE + "money): \n" + style.CYAN)
                 f_url = maskurl(main_url, mask_dom, keywords)
                 print("\n" + style.WHITE + "This is your masked URL >> " + style.MAGENTA + f_url)
                 qr = qrcode.QRCode(
@@ -102,15 +104,16 @@ if __name__ == '__main__':
                 qr.make(fit=True)
                 img = qr.make_image(fill='black', back_color='white')
                 print(style.YELLOW + "\nGenerating QR Code\n" + style.RESET)
+                sleep(3)
             # QR GENERATING
                 with alive_bar(100, spinner='pulse') as progrs:
 
                     for i in range(100):
                         sleep(0.01)
                         progrs()
-                system('clear')        
+                system('clear')
                 print(style.GREEN + "\n\n[>] QR Successfully Generated [<]" + style.RESET)
-                print(style.GREEN + "Archivo almacenado en el repositorio: " + style.RESET + style.CYAN + "EvilQR/eQRCode.png " + style.RESET)
+                print(style.GREEN + "QR stored in the directory: " + style.RESET + style.CYAN + pwd + style.RESET)
                 sleep(4)
                 system('clear')
                 img.save('eQRCode.png')
@@ -126,40 +129,3 @@ if __name__ == '__main__':
     else:
         print(style.RED + "[!]" + style.WHITE + "Invalid Argument" + style.RESET)
         sys.exit(1)
-        
-    
-    
-    
-    
-    
-
-
-
-# 
-# # QR 
-# qr = qrcode.QRCode(
-# version=4,
-# box_size=10,
-# border=1
-# )
-# qr.add_data(main_url)
-# qr.make(fit=True)
-# img = qr.make_image(fill='black', back_color='white')
-# 
-# print(style.GREEN + "Generando Codigo QR\n")
-# 
-# # QR GENERATING
-# with alive_bar(100, spinner='pulse') as progrs:
-#     for i in range(100):
-#         sleep(0.01)
-#         progrs()
-#         system('clear')
-#         print(style.GREEN + "\n[>] QR Generado con exito [<]" + style.RESET)
-#         print(style.GREEN + "Archivo almacenado en el repositorio: " + style.RESET + style.CYAN + "EvilQR/eQRCode.png " + style.RESET)
-#         sleep(5)
-#         system('clear')
-#         img.save('eQRCode.png')
-# 
-#     
-# 
-# 
