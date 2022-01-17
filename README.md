@@ -40,8 +40,13 @@ Para ejecutar la herramienta podemos hacerlo de las siguientes formas:
 EvilQR.py
 ```
 ![imagen](https://user-images.githubusercontent.com/72285693/149814073-7b000c02-34a6-4b67-9613-9c36559966e5.png)   
-   
-   
+or
+```bash
+# Running it directly from the tool's repository
+python3 EvilQR.py
+```
+![imagen](https://user-images.githubusercontent.com/72285693/149814976-c27228b9-f130-43be-9de1-64de0a8d848c.png)
+
    
    
    
