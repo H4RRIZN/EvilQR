@@ -6,13 +6,13 @@
    <a href="https://github.com/Harrizzon/EvilQR"><img src="http://ForTheBadge.com/images/badges/built-with-love.svg"> <img src="https://forthebadge.com/images/badges/made-with-python.svg"></a>
 <p align="center">
 
- EvilQR es una herramienta escrita en python que permite generar codigos QR con alguna URL maliciosa o similar. Esta además permite enmascarar las URL para añadir un nivel de ingenieria social más elevado.
+EvilQR es una herramienta escrita en python que permite generar códigos QR con alguna URL maliciosa o similar. Esta además permite enmascarar las URL para añadir un nivel de ingeniería social más elevado.
 
 # Features
 - Generar Codigo QR en base a cualquier tipo de URL
 - Enmascarar URL
 
-# Instalacion
+# Instalación
 
 One Liner 
 ```bash
@@ -33,7 +33,13 @@ pip3 install -r requirements.txt
 cp EvilQR.py /usr/bin/
 ```
 
-   
+# USO
+Para ejecutar la herramienta podemos hacerlo de las siguientes formas:
+```bash
+# With the script copied to /usr/bin we can run it from any directory in the terminal
+EvilQR.py
+```
+![imagen](https://user-images.githubusercontent.com/72285693/149814073-7b000c02-34a6-4b67-9613-9c36559966e5.png)   
    
    
    
