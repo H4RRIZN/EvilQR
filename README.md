@@ -16,7 +16,9 @@
 
 One Liner 
 ```bash
-sudo git clone https://github.com/Harrizzon/EvilQR && cd EvilQR && chmod +x EvilQR.py && pip3 install -r requirements.txt && cp EvilQR.py /usr/bin/
+# Install as sudo
+sudo su
+git clone https://github.com/Harrizzon/EvilQR && cd EvilQR && chmod +x EvilQR.py && pip3 install -r requirements.txt && cp EvilQR.py /usr/bin/
 ```
 By Steps
 ```bash
