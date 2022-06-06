@@ -85,7 +85,6 @@ if __name__ == '__main__':
                 print(style.GREEN + "\n\n[>] QR Generado con exito [<]" + style.RESET)
                 print(style.GREEN + "QR stored in the directory: " + style.RESET + style.CYAN + pwd + style.RESET)
                 sleep(4)
-                system('clear')
                 img.save('eQRCode.png')
                 sys.exit(0)
             if choose_mask == "y":
@@ -115,7 +114,6 @@ if __name__ == '__main__':
                 print(style.GREEN + "\n\n[>] QR Successfully Generated [<]" + style.RESET)
                 print(style.GREEN + "QR stored in the directory: " + style.RESET + style.CYAN + pwd + style.RESET)
                 sleep(4)
-                system('clear')
                 img.save('eQRCode.png')
                 sys.exit(0)
                 
